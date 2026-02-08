@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Heart Beat's Story | The Science of Rhythm</title>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Lucide Icons (via CDN) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --primary-color: #e63946;
+      --secondary-color: #457b9d;
+      --accent-color: #a8dadc;
+      --dark-color: #1d3557;
+      --light-color: #f1faee;
+      --text-main: #2b2d42;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.8;
+      color: var(--text-main);
+      background-color: #fcfcfc;
+      scroll-behavior: smooth;
+    }
+
+    h1,
+    h2,
+    h3,
+    .serif-font {
+      font-family: 'Libre Baskerville', serif;
+      color: var(--dark-color);
+    }
+
+    /* Navbar */
+    .navbar {
+      backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.8) !important;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      color: var(--primary-color) !important;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      padding: 100px 0;
+      background: linear-gradient(135deg, #fff5f5 0%, #ffffff 100%);
+      border-bottom: 1px solid #eee;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Content Sections */
+    .section-padding {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      position: relative;
+      margin-bottom: 3rem;
+      padding-bottom: 1rem;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 60px;
+      height: 4px;
+      background-color: var(--primary-color);
+      border-radius: 2px;
+    }
+
+    .section-title.text-center::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* Cards */
+    .card {
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-icon {
+      width: 60px;
+      height: 60px;
+      background-color: var(--light-color);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      color: var(--primary-color);
+    }
+
+    /* Banner styles */
+    .myth-banner {
+      background: #fff5f5;
+      border-left: 5px solid var(--primary-color);
+      padding: 30px;
+      border-radius: 0 10px 10px 0;
+      margin: 30px 0;
+    }
+
+    .fact-banner {
+      background: #f0fff4;
+      border-left: 5px solid #28a745;
+      padding: 30px;
+      border-radius: 0 10px 10px 0;
+      margin: 30px 0;
+    }
+
+    /* FAQ Accordion */
+    .accordion-item {
+      border: none;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    }
+
+    .accordion-button:not(.collapsed) {
+      background-color: var(--light-color);
+      color: var(--primary-color);
+    }
+
+    /* Animation Classes */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--dark-color);
+      color: white;
+      padding: 60px 0 20px;
+    }
+
+    footer h5 {
+      color: var(--accent-color);
+      margin-bottom: 1.5rem;
+    }
+
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Heart<span class="text-dark">Story</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto font-weight-bold">
+          <li class="nav-link"><a class="nav-link" href="#story">The Story</a></li>
+          <li class="nav-link"><a class="nav-link" href="#biology">Biology</a></li>
+          <li class="nav-link"><a class="nav-link" href="#problems">Problems</a></li>
+          <li class="nav-link"><a class="nav-link" href="#faq">FAQ</a></li>
+          <li class="nav-item ms-lg-3">
+            <a class="btn btn-primary btn-sm px-4" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-section mt-5">
+    <div class="container text-center">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <span class="badge rounded-pill bg-light text-primary px-3 py-2 mb-3 border">Sinoatrial Node
+            Research</span>
+          <h1 class="hero-title">Your Heartbeat Starts Here: Meet Your Sinoatrial Node!</h1>
+          <p class="lead mb-5 text-muted">This site explores the tiny patch of cells that sets your rhythm and
+            how your choices keep it strong.</p>
+          <div class="d-flex justify-content-center gap-3">
+            <a href="#story" class="btn btn-primary btn-lg px-5 shadow">Get Started</a>
+            <a href="#biology" class="btn btn-outline-dark btn-lg px-5">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Story -->
+  <section id="story" class="section-padding">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <h2 class="section-title">The Natural Spark Plug</h2>
+          <p class="lead">Every single healthy heartbeat starts with a tiny patch of special cells.</p>
+          <p>The sinoatrial node, also known as the <strong>sinus node</strong>, is basically the heart's
+            natural pacemaker! It automatically generates a small electrical signal <strong>60-100 times a
+              minute</strong> when you’re resting.</p>
+          <p>This signal spreads through your heart like a wave, telling it when to squeeze and pump blood. It
+            functions on its own—since what it does is routine, its much leakier channels allow movement of
+            ions to be quicker, helping the heart keep pulsing without wearing the body out.</p>
+
+          <div class="myth-banner">
+            <h5 class="text-danger fw-bold serif-font">The Daily Feat</h5>
+            <p class="mb-0">Your SA node fires about <strong>100,000 times per day</strong>! That's a lot of
+              work for a tiny patch of cells.</p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card p-2 bg-light text-center border-0 shadow-sm">
+            <div class="card-body py-5">
+              <i data-lucide="zap" class="text-primary mb-3" style="width: 64px; height: 64px;"></i>
+              <h3 class="serif-font mb-3">Self-Sufficient Rhythm</h3>
+              <p>Unlike other organs, your heart doesn't wait for a signal from the brain for every beat.
+                Pacemaker cells can generate their own electrical impulses spontaneously.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Biology Section -->
+  <section id="biology" class="section-padding bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title text-center">The Biology of it All</h2>
+        <p class="text-muted" style="max-width: 700px; margin: 0 auto;">The heart's conduction system is a
+          complex network of electrical highways and delay gates ensuring perfect timing.</p>
+      </div>
+
+      <!-- Image Section -->
+      <div class="row justify-content-center mb-5">
+        <div class="col-lg-8 text-center">
+          <img src="assets/images/conduction-system.png" alt="Heart Conduction System"
+            class="img-fluid rounded shadow hover-scale" style="transition: transform 0.3s ease;">
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- SA Node -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card p-4 h-100">
+            <div class="card-icon"><i data-lucide="activity"></i></div>
+            <h5 class="fw-bold">SA Node</h5>
+            <p class="text-primary small fw-bold mb-2">The Natural Pacemaker</p>
+            <div class="mb-3">
+              <strong class="d-block text-dark">What it is:</strong>
+              <p class="small text-muted mb-0">The heart's natural pacemaker.</p>
+            </div>
+            <div>
+              <strong class="d-block text-dark">What it does:</strong>
+              <p class="small text-muted mb-0">It generates the initial electrical impulse, setting the rhythm and
+                starting each heartbeat from the top of the heart.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- AV Node -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card p-4 h-100">
+            <div class="card-icon"><i data-lucide="hourglass"></i></div>
+            <h5 class="fw-bold">AV Node</h5>
+            <p class="text-primary small fw-bold mb-2">The Delay Gate</p>
+            <div class="mb-3">
+              <strong class="d-block text-dark">What it is:</strong>
+              <p class="small text-muted mb-0">The heart's electrical "delay gate."</p>
+            </div>
+            <div>
+              <strong class="d-block text-dark">What it does:</strong>
+              <p class="small text-muted mb-0">It briefly holds the electrical signal, allowing the top chambers to
+                finish squeezing before the signal is sent to the powerful bottom chamber.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bundle of His -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card p-4 h-100">
+            <div class="card-icon"><i data-lucide="arrow-down-circle"></i></div>
+            <h5 class="fw-bold">Bundle of His</h5>
+            <p class="text-primary small fw-bold mb-2">The Highway</p>
+            <div class="mb-3">
+              <strong class="d-block text-dark">What it is:</strong>
+              <p class="small text-muted mb-0">The main electrical "highway" down the center of the heart.</p>
+            </div>
+            <div>
+              <strong class="d-block text-dark">What it does:</strong>
+              <p class="small text-muted mb-0">It carries the signal from the AV node and splits it into two branches to
+                deliver it to the left and right bottom chambers.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Bundle Branch -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card p-4 h-100">
+            <div class="card-icon"><i data-lucide="git-branch"></i></div>
+            <h5 class="fw-bold">Right Bundle Branch (RBB)</h5>
+            <p class="text-primary small fw-bold mb-2">Right Pathway</p>
+            <div class="mb-3">
+              <strong class="d-block text-dark">What it is:</strong>
+              <p class="small text-muted mb-0">One of the two main electrical pathways that splits off from the Bundle
+                of His.</p>
+            </div>
+            <div>
+              <strong class="d-block text-dark">What it does:</strong>
+              <p class="small text-muted mb-0">It carries the electrical signal down the right side of the heart's
+                septum to stimulate the right ventricle, telling it to pump blood to the lungs.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Left Bundle Branch -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card p-4 h-100">
+            <div class="card-icon"><i data-lucide="git-branch"></i></div>
+            <h5 class="fw-bold">Left Bundle Branch (LBB)</h5>
+            <p class="text-primary small fw-bold mb-2">Left Pathway</p>
+            <div class="mb-3">
+              <strong class="d-block text-dark">What it is:</strong>
+              <p class="small text-muted mb-0">The other main electrical pathway that splits from the Bundle of His.</p>
+            </div>
+            <div>
+              <strong class="d-block text-dark">What it does:</strong>
+              <p class="small text-muted mb-0">It carries the signal down the left side of the septum to stimulate the
+                much larger left ventricle, which pumps oxygen-rich blood out to the entire body.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Purkinje Fibers -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card p-4 h-100">
+            <div class="card-icon"><i data-lucide="network"></i></div>
+            <h5 class="fw-bold">Purkinje Fibers</h5>
+            <p class="text-primary small fw-bold mb-2">The Wiring</p>
+            <div class="mb-3">
+              <strong class="d-block text-dark">What it is:</strong>
+              <p class="small text-muted mb-0">A fine network of fibers, like the heart's electrical "wiring."</p>
+            </div>
+            <div>
+              <strong class="d-block text-dark">What it does:</strong>
+              <p class="small text-muted mb-0">They rapidly distribute the electrical signal throughout the bottom
+                chambers, causing them to contract powerfully and pump blood out to the body.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Anterior Fascicular Block -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card p-4 h-100">
+            <div class="card-icon"><i data-lucide="waypoints"></i></div>
+            <h5 class="fw-bold">Anterior Fascicular Block</h5>
+            <p class="text-primary small fw-bold mb-2">The Front-Path Detour</p>
+            <div class="mb-3">
+              <strong class="d-block text-dark">What it is:</strong>
+              <p class="small text-muted mb-0">A delay or total blockage of the electrical signal traveling through that specific anterior fascicle</p>
+            </div>
+            <div>
+              <strong class="d-block text-dark">What it does:</strong>
+              <p class="small text-muted mb-0">Because the "front" path is blocked, the electrical signal has to take a detour through the other fascicle (the posterior one) to reach the top of the heart. This changes the direction (axis) of the heart's electrical activity, which doctors see as a specific pattern on an ECG.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Arrhythmia Section -->
+  <section id="problems" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <h2 class="section-title">Occurring Problems</h2>
+          <p class="text-muted mb-4">When the rhythm goes off, it results in Arrhythmia (an incorrect rhythm
+            in the heart).</p>
+
+          <div class="list-group list-group-flush shadow-sm rounded">
+            <div class="list-group-item p-4">
+              <h6 class="fw-bold mb-1">Sinus Bradycardia</h6>
+              <p class="small text-muted mb-0">Resting heart rate is persistently much lower than 60 bpm.
+              </p>
+            </div>
+            <div class="list-group-item p-4">
+              <h6 class="fw-bold mb-1">Sinus Tachycardia</h6>
+              <p class="small text-muted mb-0">SA node causes a persistent heart rate over 100 bpm.</p>
+            </div>
+            <div class="list-group-item p-4">
+              <h6 class="fw-bold mb-1">Sinus Pause / Arrest</h6>
+              <p class="small text-muted mb-0">SA node fails to send a signal—it's a pause if one beat is
+                missing, an arrest if multiple are gone.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="myth-banner mt-lg-5">
+            <h5 class="text-danger fw-bold serif-font mb-3">Causes & Prevention</h5>
+            <p>Heart disease and damage are the main reasons for these issues. <strong>So how do we stay
+                clear?</strong></p>
+            <ul class="mb-4">
+              <li><strong>Avoid Alcohol</strong>: Can increase risk of heart disease by 22-45%.</li>
+              <li><strong>Limit Stimulants</strong>: Nicotine and heavy caffeine can lead to
+                overstimulation and Sinus Tachycardia.</li>
+            </ul>
+            <p class="mb-0 small text-muted font-italic">The younger you start making these choices, the
+              higher the health reward.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="section-padding bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title text-center">Frequently Asked Questions</h2>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="accordion" id="heartFaq">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#q1">
+                  Can my heart beat if my brain stops?
+                </button>
+              </h2>
+              <div id="q1" class="accordion-collapse collapse show">
+                <div class="accordion-body">
+                  Yes, for a short time. Pacemaker cells in the SA node are self-sufficient and
+                  generate their own electrical impulses without brain signals. However, the body
+                  still needs the oxygen provided by lung function.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q2">
+                  What is the difference between Sinus Arrest and Exit Block?
+                </button>
+              </h2>
+              <div id="q2" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  In a <strong>Sinus Arrest</strong>, the SA node completely fails to fire. In an
+                  <strong>Exit Block</strong>, the node actually fires, but the signal is unable to
+                  pass through the surrounding tissue to the rest of the atrium.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q3">
+                  Why is caffeine considered a risk?
+                </button>
+              </h2>
+              <div id="q3" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  Overuse of caffeine (and nicotine) can lead to overstimulation of the electrical
+                  system, causing the heart rate to exceed 100 bpm persistently, which is known as
+                  Sinus Tachycardia.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <footer id="contact">
+    <div class="container">
+      <div class="row pb-5">
+        <div class="col-md-4 mb-4">
+          <h4 class="serif-font text-white mb-4">HeartStory</h4>
+          <p style="color: #f8f9fa;">A research project dedicated to understanding the heart's natural rhythm and
+            promoting better cardiovascular health choices.</p>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="#story">The Story</a></li>
+            <li><a href="#biology">Biology</a></li>
+            <li><a href="#problems">Problems</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-4" style="color: #f8f9fa;">
+          <h5>Contact Information</h5>
+          <p style="color: #f8f9fa;"><i data-lucide="mail" class="me-2" style="width:16px; color: #f8f9fa;"></i>
+            srisuktha@gmail.com</p>
+          <p style="color: #f8f9fa;"><i data-lucide="map-pin" class="me-2" style="width:16px; color: #f8f9fa;"></i>
+            Westborough, MA
+          </p>
+        </div>
+      </div>
+      <div class="border-top border-secondary pt-4 text-center">
+        <p class="small mb-0" style="color: #f8f9fa;">&copy; 2026 HeartStory Project. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Intersection Observer for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.card, .section-title, .hero-title').forEach((el) => {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  </script>
+  <!--Below Section is for the Firebase -->
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyCs8mRg4CSyJjZJ_c_3UlCiqTGnAaJeCa0",
+      authDomain: "storyofyourheartbeat.firebaseapp.com",
+      projectId: "storyofyourheartbeat",
+      storageBucket: "storyofyourheartbeat.firebasestorage.app",
+      messagingSenderId: "1098198983787",
+      appId: "1:1098198983787:web:b97f64ad2b1ecf27607d2e",
+      measurementId: "G-DPQ5JEW2K1"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+</body>
+
+</html>
