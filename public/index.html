@@ -118,7 +118,7 @@
     }
 
     /* Banner styles */
-    .myth-banner {
+    .red-banner {
       background: #fff5f5;
       border-left: 5px solid var(--primary-color);
       padding: 30px;
@@ -243,7 +243,7 @@
             functions on its own—since what it does is routine, its much leakier channels allow movement of
             ions to be quicker, helping the heart keep pulsing without wearing the body out.</p>
 
-          <div class="myth-banner">
+          <div class="fact-banner">
             <h5 class="text-danger fw-bold serif-font">The Daily Feat</h5>
             <p class="mb-0">Your SA node fires about <strong>100,000 times per day</strong>! That's a lot of
               work for a tiny patch of cells.</p>
@@ -445,7 +445,7 @@
           </div>
         </div>
         <div class="col-lg-5">
-          <div class="myth-banner mt-lg-5">
+          <div class="red-banner mt-lg-5">
             <h5 class="text-danger fw-bold serif-font mb-3">Causes & Prevention</h5>
             <p>Heart disease and damage are the main reasons for these issues. <strong>So how do we stay
                 clear?</strong></p>
@@ -518,62 +518,48 @@
       </div>
     </div>
   </section>
-  <!-- Who Am I? Section -->
-  <section id="whoami" class="section-padding">
+  <!-- Who Am I & Contact Section -->
+  <section id="contact-and-bio" class="section-padding">
     <div class="container">
-      <div class="row  justify-content-center">
-        <div class="col-lg-6 mb-4 mb-lg-0">
+      <div class="row align-items-start">
+        <!-- Who Am I Column -->
+        <div class="col-lg-4 mb-5 mb-lg-0">
           <h2 class="section-title">Who Am I?</h2>
-          <p class="lead">I am a Sri Suktha, student who is passionate about heart health and wants to share my
-            knowledge with
-            the world.</p>
-          <!-- <p>I am a student who is passionate about heart health and wants to share my knowledge with
-            the world.</p> -->
+          <p class="lead mb-4">I am Sri Suktha, a student from Westborough High who is passionate about heart health and wants to share my
+            knowledge with the world.</p>
+          <!-- Additional content or image can go here if needed -->
         </div>
-        <!-- <div class="col-lg-6">
-          <img
-            src="https://images.unsplash.com/photo-1576091160550-2173aaf9962a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-            alt="Heart" class="img-fluid rounded-3 shadow">
-        </div> -->
-      </div>
-    </div>
-  </section>
 
-  <!-- Contact Form Section -->
-  <section id="contact-form" class="section-padding">
-    <div class="container">
-      <div class="row justify-content-center">
+        <!-- Contact Form Column -->
         <div class="col-lg-8">
-          <div class="card shadow-sm">
-            <div class="card-body p-5">
-              <div class="text-center mb-4">
-                <h2 class="section-title text-center">Contact Me</h2>
-                <p class="text-muted">I would love to hear from you, send me a message!</p>
+          <div class="card-body">
+            <div class="text-center mb-4">
+              <h2 class="section-title text-center">Contact Me</h2>
+              <p class="text-muted">I would love to hear from you, send me a message!</p>
+            </div>
+
+            <form action="https://formspree.io/f/mojnvvza" method="POST">
+              <div class="mb-3">
+                <label for="name" class="form-label fw-bold">Name</label>
+                <input type="text" class="form-control" id="name" name="name" required placeholder="Your Name">
               </div>
 
-              <form action="https://formspree.io/f/mojnvvza" method="POST">
-                <div class="mb-3">
-                  <label for="name" class="form-label fw-bold">Name</label>
-                  <input type="text" class="form-control" id="name" name="name" required placeholder="Your Name">
-                </div>
+              <div class="mb-3">
+                <label for="email" class="form-label fw-bold">Email Address</label>
+                <input type="email" class="form-control" id="email" name="email" required
+                  placeholder="name@example.com">
+              </div>
 
-                <div class="mb-3">
-                  <label for="email" class="form-label fw-bold">Email Address</label>
-                  <input type="email" class="form-control" id="email" name="email" required
-                    placeholder="name@example.com">
-                </div>
+              <div class="mb-4">
+                <label for="message" class="form-label fw-bold">Message</label>
+                <textarea class="form-control" id="message" name="message" rows="5" required
+                  placeholder="Your message here..."></textarea>
+              </div>
 
-                <div class="mb-4">
-                  <label for="message" class="form-label fw-bold">Message</label>
-                  <textarea class="form-control" id="message" name="message" rows="5" required
-                    placeholder="Your message here..."></textarea>
-                </div>
-
-                <div class="d-grid">
-                  <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
-                </div>
-              </form>
-            </div>
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -596,6 +582,8 @@
             <li><a href="#biology">Biology</a></li>
             <li><a href="#problems">Problems</a></li>
             <li><a href="#faq">FAQ</a></li>
+            <li><a href="#whoami">Who Am I?</a></li>
+            <li><a href="#contact">ContactMe</a></li>
           </ul>
         </div>
         <div class="col-md-4 mb-4" style="color: #f8f9fa;">
